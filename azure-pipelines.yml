@@ -6,7 +6,7 @@ stages:
   jobs:
   - job: Build
     pool:
-      name: <YourSelfHostedPoolName>  # Replace with your self-hosted pool name
+      name: Fazio  # Replace with your self-hosted pool name
     steps:
     - script: dotnet build --configuration $(buildConfiguration)
       displayName: 'dotnet build $(buildConfiguration)'
@@ -28,7 +28,7 @@ stages:
   jobs:
   - job: Deploy
     pool:
-      name: <YourSelfHostedPoolName>  # Replace with your self-hosted pool name
+      name: Fazio  # Replace with your self-hosted pool name
     steps:
     - task: DownloadBuildArtifacts@0
       inputs:
